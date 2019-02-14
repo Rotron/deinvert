@@ -84,6 +84,16 @@ Descrambling a live FM channel at 27 Megahertz from an RTL-SDR, setting 4:
     -s, --split-frequency  Split point for split-band inversion, in Hertz.
 
     -v, --version          Display version string.
+    
+## Realtime encoding from microphone
+
+12k
+
+sox -d -r 12000 -c 1  -t .s16 - | ./deinvert -r 12000 -p8 | play -r 12000 -c 1 -t .s16 -
+
+48k
+
+sox -d -r 48100 -c 1  -t .s16 - | ./deinvert -r 48100 -p4 | play -r 48100 -c 1 -t .s16 -
 
 ## Inversion carrier presets
 
